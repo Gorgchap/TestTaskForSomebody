@@ -1,0 +1,9 @@
+<div class="search">
+  <mat-form-field>
+    <input matInput [ngModel]="filter.name" (input)="filter.name = $event.target.value" placeholder="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [ngModel]="filter.type" (input)="filter.type = $event.target.value" placeholder="type">
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="search()">Search</button>
+</div>

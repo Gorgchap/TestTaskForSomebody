@@ -1,0 +1,30 @@
+<div class="result" *ngIf="results">
+  <table mat-table [dataSource]="results | async">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Id</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{element.name}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="type">
+      <th mat-header-cell *matHeaderCellDef>Type</th>
+      <td mat-cell *matCellDef="let element">{{element.type}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="empty">
+      <td mat-footer-cell *matFooterCellDef colspan="3">
+        No appropriate data
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-footer-row *matFooterRowDef="['empty']" [hidden]="results && (results | async)?.length"></tr>
+  </table>
+
+  <button mat-raised-button color="primary" routerLink="/">Go back</button>
+</div>

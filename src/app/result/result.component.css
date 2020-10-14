@@ -1,0 +1,14 @@
+.result {
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.result > table {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
